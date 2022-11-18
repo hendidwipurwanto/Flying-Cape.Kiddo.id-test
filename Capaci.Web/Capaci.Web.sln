@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capaci.Web", "Capaci.Web\Capaci.Web.csproj", "{68895801-6BF2-46B1-A6F4-F41C8D3D4E30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capaci.BLL", "Capaci.BLL\Capaci.BLL.csproj", "{1C50DB4E-6EC2-499E-9FC6-C7D50CDB4418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capaci.DAL", "Capaci.DAL\Capaci.DAL.csproj", "{CA64ADF6-BB0C-4217-9AE6-8A3BD41E3EC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{68895801-6BF2-46B1-A6F4-F41C8D3D4E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68895801-6BF2-46B1-A6F4-F41C8D3D4E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68895801-6BF2-46B1-A6F4-F41C8D3D4E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C50DB4E-6EC2-499E-9FC6-C7D50CDB4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C50DB4E-6EC2-499E-9FC6-C7D50CDB4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C50DB4E-6EC2-499E-9FC6-C7D50CDB4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C50DB4E-6EC2-499E-9FC6-C7D50CDB4418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA64ADF6-BB0C-4217-9AE6-8A3BD41E3EC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA64ADF6-BB0C-4217-9AE6-8A3BD41E3EC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA64ADF6-BB0C-4217-9AE6-8A3BD41E3EC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA64ADF6-BB0C-4217-9AE6-8A3BD41E3EC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

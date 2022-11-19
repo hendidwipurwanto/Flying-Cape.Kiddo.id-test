@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Mentor Bootstrap Template - Index</title>
+    <title>Capaci Video Subcription</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="~/website/assets/img/favicon.png" rel="icon">
+    <link href="~/website/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -42,39 +42,18 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">Mentor</a></h1>
+            <h1 class="logo me-auto"><a asp-area="" asp-controller="Home" asp-action="Index">CAPACI</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="trainers.html">Trainers</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-
-                    <li class="dropdown">
-                        <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown">
-                                <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" class="active">Home</a></li>
+                    <li><a asp-area="" asp-controller="About" asp-action="Index" class="active">About</a></li>
+                    <li><a asp-area="" asp-controller="Product" asp-action="Index" >Product</a></li>
+                    <li><a asp-area="" asp-controller="MyVideo" asp-action="Index" >My Video</a></li>
+                    <li><a asp-area="" asp-controller="wishlist" asp-action="Index" >wishlist</a></li>
+                    
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -294,7 +273,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="course-item">
-                            <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+                            <img src="~/website/assets/img/course-1.jpg" class="img-fluid" alt="...">
                             <div class="course-content">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <h4>Web Development</h4>
@@ -305,7 +284,7 @@
                                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
-                                        <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                        <img src="~/website/assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
                                         <span>Antonio</span>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
@@ -346,7 +325,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                         <div class="course-item">
-                            <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+                            <img src="~/website/assets/img/course-3.jpg" class="img-fluid" alt="...">
                             <div class="course-content">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <h4>Content</h4>
@@ -357,7 +336,7 @@
                                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
-                                        <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+                                        <img src="~/website/assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
                                         <span>Brandon</span>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
@@ -381,7 +360,7 @@
                 <div class="row" data-aos="zoom-in" data-aos-delay="100">
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member">
-                            <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                            <img src="~/website/assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
                             <div class="member-content">
                                 <h4>Walter White</h4>
                                 <span>Web Development</span>
@@ -400,7 +379,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member">
-                            <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
+                            <img src="~/website/assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
                             <div class="member-content">
                                 <h4>Sarah Jhinson</h4>
                                 <span>Marketing</span>
@@ -419,7 +398,7 @@
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member">
-                            <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+                            <img src="~/website/assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
                             <div class="member-content">
                                 <h4>William Anderson</h4>
                                 <span>Content</span>

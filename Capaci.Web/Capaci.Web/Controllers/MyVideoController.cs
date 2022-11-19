@@ -2,7 +2,7 @@
 
 namespace Capaci.Web.Controllers
 {
-    public class HomeController : Controller
+    public class MyVideoController : Controller
     {
         public IActionResult Index()
         {

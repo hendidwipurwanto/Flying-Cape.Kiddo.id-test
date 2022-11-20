@@ -124,9 +124,9 @@ namespace Capaci.Web.Controllers
                     var user = await userManager.FindByEmailAsync(viewModel.UserName);
                     var roles = await userManager.GetRolesAsync(user);
 
-                    if (roles.Count > 1)
+                    if (roles.Count > 0)
                     {
-                        return RedirectToAction("index", "Dashboard");
+                        return RedirectToAction("index", "AdminDashboard");
                     }
                     else
                     {

@@ -1,4 +1,5 @@
-﻿using Capaci.BLL.interfaces;
+﻿using AutoMapper;
+using Capaci.BLL.interfaces;
 using Capaci.DTO.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,13 +14,15 @@ namespace Capaci.Web.Controllers
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserDetailService _userDetailService;
+        private readonly IMapper _mapper;
         public AccountController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager,
-                                 SignInManager<IdentityUser> signInManager, IUserDetailService userDetailService)
+                                 SignInManager<IdentityUser> signInManager, IUserDetailService userDetailService, IMapper mapper)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
             _roleManager = roleManager;
             _userDetailService = userDetailService;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -39,9 +42,13 @@ namespace Capaci.Web.Controllers
                 var user = new IdentityUser { UserName = viewModel.Email, Email = viewModel.Email, EmailConfirmed = true };
                 string guId = user.Id.ToString();
                 viewModel.Id = new Guid(guId);
-                await _userDetailService.Create(viewModel);
+                //var userDetailViewModel = new UserDetailViewModel() { Email = viewModel.Email, FullAddress = viewModel.FullAddress, FullName = viewModel.FullName, PhoneNumber = viewModel.PhoneNumber };
+                var userDetailViewModel = new UserDetailViewModel();
+                _mapper.Map(viewModel, userDetailViewModel);
+                
+                await _userDetailService.Create(userDetailViewModel);
                 var result = await userManager.CreateAsync(user, viewModel.Password);
-                //var result2 = await userManager.AddToRoleAsync(user, "Creator");
+                var result2 = await userManager.AddToRoleAsync(user, "Creator");
                 //var aktifitas = new AktifitasUserViewModel { UserName = User.Identity.Name, TanggalAktifitasStringFormat = DateTime.Now.ToString("dd/M/yyyy HH:mm:ss", CultureInfo.InvariantCulture), Aktifitas = "Menambahkan User[" + user.UserName + "]" };
                 //await _listAktifitasUserService.Create(aktifitas);
                if (result.Succeeded)
@@ -82,7 +89,7 @@ namespace Capaci.Web.Controllers
                var user = new IdentityUser { UserName = viewModel.Email, Email = viewModel.Email, EmailConfirmed = true };
                 string guId = user.Id.ToString();
                 viewModel.Id = new Guid(guId);
-                await _userDetailService.Create(viewModel);
+              //  await _userDetailService.Create(viewModel);
                 var result = await userManager.CreateAsync(user, viewModel.Password);
                 if (result.Succeeded)
                 {

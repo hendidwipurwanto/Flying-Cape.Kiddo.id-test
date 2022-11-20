@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Capaci.DAL\Capaci.DAL.csproj" />
     <ProjectReference Include="..\Capaci.DTO\Capaci.DTO.csproj" />
   </ItemGroup>

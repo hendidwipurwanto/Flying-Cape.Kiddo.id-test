@@ -20,7 +20,7 @@ namespace Capaci.DTO.ViewModels
         [Compare("Password", ErrorMessage = "Password and Confirmation Password doesn match")]
         public string ConfirmPassword { get; set; }
 
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string FullAddress { get; set; }
         public bool isCreator { get; set; }
     }

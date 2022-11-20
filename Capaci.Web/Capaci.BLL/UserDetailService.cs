@@ -13,53 +13,85 @@ namespace Capaci.BLL
     public class UserDetailService : IUserDetailService
     {
         private readonly IMapper _mapper;
-        private readonly IUserDetailRepository _userDetailRepository;
+        private readonly IUserDetailRepository _repository;
 
-        public UserDetailService(IUserDetailRepository userDetailRepository, IMapper mapper)
+        public UserDetailService(IUserDetailRepository repository, IMapper mapper)
         {
-            _userDetailRepository = userDetailRepository;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<bool> Create(RegisterViewModel viewModel)
+        public async Task<bool> Create(UserDetailViewModel viewModel)
         {
             try
             {
                 var model = new UserDetail();
                 _mapper.Map(viewModel, model);
-                model.Id = viewModel.Id;
-                return await _userDetailRepository.Create(model);
+
+                return await _repository.Create(model);
             }
             catch (Exception ex)
             {
 
                 throw ex;
-            }           
+            }
         }
 
-        public Task<bool> Delete(string Id)
+        public async Task<bool> Delete(string Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _repository.Delete(Guid.Parse(Id));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public Task<IEnumerable<UserDetailViewModel>> GetAll()
+        public async Task<IEnumerable<UserDetailViewModel>> GetAll()
         {
-            throw new NotImplementedException();
+            var listView = new List<UserDetailViewModel>();
+            var listModel = await _repository.GetAll();
+
+            foreach (var item in listModel)
+            {
+                var viewModel = new UserDetailViewModel();
+                _mapper.Map(item, viewModel);
+                listView.Add(viewModel);
+            }
+
+            return listView;
         }
 
-        public Task<IEnumerable<UserDetailViewModel>> GetBeritaWithPaging(int page)
+        public async Task<UserDetailViewModel> GetById(string Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var model = await _repository.GetById(Guid.Parse(Id));
+                var viewModel = new UserDetailViewModel();
+                _mapper.Map(model, viewModel);
+
+                return viewModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+           
         }
 
-        public Task<UserDetailViewModel> GetById(string Id)
+        public async Task<bool> Update(UserDetailViewModel viewModel)
         {
-            throw new NotImplementedException();
-        }
+            var model = new UserDetail();
+            _mapper.Map(viewModel, model);
 
-        public Task<bool> Update(RegisterViewModel viewModel)
-        {
-            throw new NotImplementedException();
+            return await _repository.Update(model);
         }
+    
     }
 }

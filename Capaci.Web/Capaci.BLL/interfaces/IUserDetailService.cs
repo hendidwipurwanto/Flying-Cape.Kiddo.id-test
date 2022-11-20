@@ -9,10 +9,9 @@ namespace Capaci.BLL.interfaces
     public interface IUserDetailService
     {
         Task<IEnumerable<UserDetailViewModel>> GetAll();
-        Task<IEnumerable<UserDetailViewModel>> GetBeritaWithPaging(int page);
         Task<UserDetailViewModel> GetById(string Id);
-        Task<bool> Create(RegisterViewModel viewModel);
-        Task<bool> Update(RegisterViewModel viewModel);
+        Task<bool> Create(UserDetailViewModel viewModel);
+        Task<bool> Update(UserDetailViewModel viewModel);
         Task<bool> Delete(string Id);
     }
 }

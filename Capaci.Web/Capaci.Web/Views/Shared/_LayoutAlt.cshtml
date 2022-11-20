@@ -59,7 +59,7 @@
       </nav><!-- .navbar -->
 
       <a asp-area="" asp-controller="GetStarted" asp-action="Index"class="get-started-btn">Get Started</a>
-       <i class="bx bx-user"></i> Hello @User.Identity.Name!
+       <i class="bx bx-user"></i> <a href="/userprofile?email=@User.Identity.Name">Hi @User.Identity.Name!</a>
     </div>
   </header><!-- End Header -->
 

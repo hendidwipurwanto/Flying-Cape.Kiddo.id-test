@@ -1,8 +1,9 @@
+using AutoMapper;
 using Capaci.BLL;
 using Capaci.BLL.interfaces;
 using Capaci.DAL;
 using Capaci.DAL.interfaces;
-using Capaci.Web.Data;
+using Capaci.DTO.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,12 @@ namespace Capaci.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var CapaciMapperConfig = new MapperConfiguration(config =>
+            {
+                config.AddProfile(new CapaciMapperProfile());
+            });
+            IMapper mapper = CapaciMapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -42,6 +49,8 @@ namespace Capaci.Web
             services.AddRazorPages();
            services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<ITestService, TestService>();
+            services.AddScoped<IUserDetailRepository,UserDetailRepository>();
+            services.AddScoped<IUserDetailService,UserDetailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

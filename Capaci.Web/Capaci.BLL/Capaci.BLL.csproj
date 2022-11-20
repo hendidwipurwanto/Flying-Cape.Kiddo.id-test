@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Capaci.DAL\Capaci.DAL.csproj" />
+    <ProjectReference Include="..\Capaci.DTO\Capaci.DTO.csproj" />
   </ItemGroup>
 
 </Project>

@@ -53,13 +53,12 @@
                     <li><a asp-area="" asp-controller="Product" asp-action="Index" >Product</a></li>
                     <li><a asp-area="" asp-controller="MyVideo" asp-action="Index" >My Video</a></li>
                     <li><a asp-area="" asp-controller="wishlist" asp-action="Index" >wishlist</a></li>
-                    
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            <a href="courses.html" class="get-started-btn">Get Started</a>
-
+            <a asp-area="" asp-controller="GetStarted" asp-action="Index"class="get-started-btn">Get Started</a>
+           <i class="bx bx-user"></i> Hello @User.Identity.Name!
         </div>
     </header><!-- End Header -->
     <!-- ======= Hero Section ======= -->
@@ -67,7 +66,7 @@
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
             <h1>Creating Today,<br>Leading Tomorrow</h1>
             <h2>We are team of Video Creator making Video with our Knowledge</h2>
-            <a href="courses.html" class="btn-get-started">Get Started</a>
+            <a href="/GetStarted" class="btn-get-started">Get Started</a>
         </div>
     </section><!-- End Hero -->
 

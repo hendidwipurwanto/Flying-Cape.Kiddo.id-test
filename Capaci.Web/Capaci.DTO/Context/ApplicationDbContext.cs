@@ -15,5 +15,8 @@ namespace Capaci.DTO.Context
         }
 
         public DbSet<UserDetail> UserDetail { get; set; }
+        public DbSet<Product> Product { get; set; }
+
+        public DbSet<Subscription> Subscription { get; set; }
     }
 }

@@ -15,6 +15,10 @@ namespace Capaci.Web
             CreateMap<UserDetailViewModel, UserDetailViewModel>().ReverseMap();
             CreateMap<RegisterViewModel,UserDetailViewModel>().ReverseMap();
             CreateMap<UserDetail, UserDetail>().ReverseMap();
+            CreateMap<Product, Product>().ReverseMap();
+            CreateMap<ProductViewModel, Product>().ReverseMap();
+            CreateMap<Product, ProductViewModel>().ReverseMap();
+            CreateMap<ProductViewModel, ProductViewModel>().ReverseMap();
 
         }
     }

@@ -1,0 +1,73 @@
+﻿@model Capaci.DTO.ViewModels.SubscriptionViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAlt.cshtml";
+}
+ <h2>Subscription </h2>
+        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+           <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Your Name:</h4>
+              </div>
+              <div >
+                <i></i>
+                <h4>Price:</h4>
+               
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+              </div>
+               <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Address:</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form asp-action="Save" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="ProductId" />
+                <input type="hidden" asp-for="ProductName" />
+                  <input type="hidden" asp-for="Price" />
+                <input  type="hidden" asp-for="UserId" />
+              <div class="row">
+                <div class="col-md-6 form-group">
+                 <input type="text" class="form-control" asp-for="SubscriberName" placeholder="">
+                </div>
+                </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" asp-for="Price" placeholder="">
+              </div>
+              <div class="form-group mt-2">
+                   <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="your PhoneNumber">
+                <textarea class="form-control" asp-for="FullAddress" rows="5" placeholder="Address" required></textarea>
+              </div>
+                <button class="btn btn-success w-100" type="submit">Purchase!</button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+<script>
+
+</script>

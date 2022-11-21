@@ -51,6 +51,11 @@ namespace Capaci.Web
             services.AddScoped<ITestService, TestService>();
             services.AddScoped<IUserDetailRepository,UserDetailRepository>();
             services.AddScoped<IUserDetailService,UserDetailService>();
+            services.AddScoped<IAdminProductRepository, AdminProductRepository>();
+            services.AddScoped<IAdminProductService, AdminProductService>();
+            services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
+            services.AddScoped<ISubscriptionService, SubscriptionService>();
+            services.AddScoped<IUploadImageService, UploadImageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

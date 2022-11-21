@@ -36,8 +36,8 @@ namespace Capaci.Web.Controllers
                 {
                     return View();
                 }
-             //   var defaultRole = new IdentityRole() { Name = "Creator", };
-             //   await _roleManager.CreateAsync(defaultRole);
+                var defaultRole = new IdentityRole() { Name = "Creator", };
+                await _roleManager.CreateAsync(defaultRole);
 
                 var user = new IdentityUser { UserName = viewModel.Email, Email = viewModel.Email, EmailConfirmed = true };
                 string guId = user.Id.ToString();
@@ -54,7 +54,7 @@ namespace Capaci.Web.Controllers
                if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("index", "CreatorDashboard");
+                    return RedirectToAction("index", "AdminDashboard");
                 }
 
             }
@@ -140,5 +140,13 @@ namespace Capaci.Web.Controllers
 
             return View(viewModel);
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+           
+            return RedirectToAction("Login", "Account");
+        }
+
     }
 }

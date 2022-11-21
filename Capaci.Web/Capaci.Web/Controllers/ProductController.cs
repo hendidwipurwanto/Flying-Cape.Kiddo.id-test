@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Capaci.BLL.interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Capaci.Web.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        private readonly IAdminProductService _adminProductService;
+        public ProductController(IAdminProductService adminProductService)
         {
-            return View();
+            _adminProductService = adminProductService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var list = await _adminProductService.GetAll();
+
+            return View(list);
         }
     }
 }
